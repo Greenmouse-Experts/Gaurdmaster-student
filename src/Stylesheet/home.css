@@ -1,0 +1,306 @@
+.home_main{
+    padding-top: 7rem;
+    width: 100%;
+    font-family: var(--mont) !important;
+}
+.home{
+    width: 100%;
+    background: url(../assets/back.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    height: 90vh;
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.home_text{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.home_text h2{
+    color: white;
+    font-size: 4rem;
+}
+
+.home_text p{
+    font-size: 1.5rem;
+}
+
+.home_text .search{
+    background: white;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    padding: 1rem;
+}
+
+.home_text .search svg{
+    font-size: 1.5rem;
+    color: black;
+}
+
+
+.course_main {
+    padding: 5rem 7%;
+    background: #EDEDED;
+    width: 100%;
+    font-family: var(--mont) !important;
+}
+
+
+.our_grid{
+    margin-top: 3rem;
+    width: 100%;
+   
+}
+
+.our_head span{
+    color: var(--blu);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-bottom: 0.5rem;
+}
+.our_head h2{
+    display: flex;
+    justify-content: space-between;
+}
+
+.our_head h2 div{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.butt span{
+    padding: 0.6rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--blu);
+    
+}
+
+.butt svg{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700 !important;
+}
+
+
+.carousel{
+    padding-top: 3rem;
+    width:100%;
+   
+    height: 100%;
+}
+
+.slide_card{
+   background: white;
+   margin-right: 2rem !important;
+   width: fit-content !important;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+ 
+   
+}
+
+
+.slide_card .content{
+    padding: 2rem 2rem 3rem 2rem;
+    display: flex;
+    flex-direction: column ;
+    justify-content: space-between !important;
+    height: 100%;
+    gap: 1rem;
+    position: relative;
+    height: 100%;
+}
+
+.slide_card .content h3{
+    color: #0D0D0D;
+font-family: var(--sky)!important;
+font-size: 19px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.enrol{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+}
+.slide_card .content a{
+    color: white;
+    font-size: 1.1rem;
+    background: var(--blu);
+    padding: 0.7rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    align-self: flex-end;
+    justify-self: flex-end !important;
+}
+
+.content span{
+    position: absolute;
+    top: -19px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    background: var(--yell);
+    width: fit-content;
+    padding: 0.6rem 0.7rem;
+    color: #0D0D0D;
+    gap: 0.5rem;
+font-size: 13px;
+font-weight: 600;
+border-radius: 4px;
+
+}
+.slide_card img{
+    width: 100% !important;
+}
+
+
+
+.course_grid .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between !important;
+
+    height: 100%;
+}
+
+.course_head span {
+    color: #192F59;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.course_head h2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.num{
+    padding: 6rem 7%;
+    background: var(--blue);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--sky)!important;
+    color: white;
+}
+
+.num_div{
+    width: 83.5%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.7rem;
+
+}
+
+.num_div h2{
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.num_div p{
+    font-family: var(--mont)!important;
+}
+
+.top{
+    background: white;
+}
+.top_link{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.top_link a{
+    color: white;
+    font-size: 1.1rem;
+    background: var(--blu);
+    padding: 0.7rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-style: normal;
+    border-radius: 40px;
+    font-weight: 600;
+}
+.top_grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+    
+}
+.top_grid .slide_card{
+    margin: 0 !important;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+
+
+@media screen and (max-width:1024px) {
+    .num{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .num_div{
+        width: 100%;
+    }
+
+    .top_grid{
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+    
+}
+
+@media screen and (max-width:550px) {
+    .num{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+    }
+
+    
+
+    .top_grid{
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+
+    .top_link{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
