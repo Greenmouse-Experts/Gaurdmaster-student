@@ -1,107 +1,158 @@
-import React from "react";
-import profile from "../../image/profile.png";
-import "../stylesheet/styles.css";
+import React, { useState } from "react";
+import profile from "../assets/user.png";
+import "../stylesheet/dashboard.css";
 import { BiLogoGmail } from "react-icons/bi";
-import { BsFillCalendarDateFill, BsTelephoneFill } from "react-icons/bs";
+import { BsTwitterX, BsTelephoneFill } from "react-icons/bs";
+import { FiUser, FiFacebook } from "react-icons/fi";
+import { FaLinkedinIn } from "react-icons/fa";
+import { IoLockClosedOutline } from "react-icons/io5";
+
 
 const Profile = () => {
+  const [activeTab, setActiveTab] = useState("profile");
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
+
   return (
     <div className="profile">
-      <div className="profile_left">
-        <h2>My Profile <span><h3>1GFD3EQL3Z</h3></span></h2>
-        <div className="profile_head">
-          <img src={profile} alt="" />
-          <div>
-            <h3>GreenMouse Tech</h3>
-            <p>Individual</p>
-            <button>Upload Photo</button>
-          </div>
-        </div>
-        <div className="profile_body">
-          <div>
-            <span>
-              <BiLogoGmail />
-            </span>{" "}
-            <div className="prof_card">
-              <label htmlFor="email">Email</label>
-              <h3>greenmousedev@gmail.com</h3>
-            </div>
-          </div>
-          <div>
-            <span>
-              <BsTelephoneFill />
-            </span>
-            <div className="prof_card">
-              <label htmlFor="phone">Phone</label>
-              <h3>09887665554</h3>
-            </div>
-          </div>
-          <div>
-            <span>
-              <BsFillCalendarDateFill />
-            </span>
-            <div className="prof_card">
-              <label htmlFor="register">Registered</label>
-              <h3>7/29/2022, 2:03:39 PM</h3>
-            </div>
-          </div>
-        </div>
+      <h3>Settings info</h3>
+      <div className="profile_btn">
+        <button
+          onClick={() => handleTabChange("profile")}
+          className={activeTab === "profile" ? "active" : ""}
+        >
+          Profile
+        </button>
+        <button
+          onClick={() => handleTabChange("password")}
+          className={activeTab === "password" ? "active" : ""}
+        >
+          Password
+        </button>
       </div>
 
-    <div className="profile_right">
-        <form action="submit">
-            <h2>Update Profile</h2>
-
-            <div className="input_log">
-          <label htmlFor="firstname">First Name</label>
+      {activeTab === "profile" && (
+        <div className="profile_div">
+          <h3>Profile Settings</h3>
           <div>
+            <img src={profile} alt="User Profile" />
+            <div>
+              <button>Choose File</button>
+              <p>No File Chosen</p>
+            </div>
+          </div>
+          <form action="" className="profile_form">
+          <div className="double">
+              <div className="input">
+                <label htmlFor="">Full Name</label>
+                <div>
+                  <FiUser />
+                  <input type="text" placeholder="" />
+                </div>
+              </div>
+              <div className="input">
+                <label htmlFor="">Email Address</label>
+                <div>
+                  <BiLogoGmail />
+                  <input type="text" />
+                </div>
+              </div>
+            </div>
+            <div className="double">
+              <div className="input">
+                <label htmlFor="">Phone Number </label>
+                <div>
+                  <BsTelephoneFill />
+                  <input type="text" placeholder="" />
+                </div>
+              </div>
+              <div className="input">
+                <label htmlFor="">Facebook</label>
+                <div>
+                <FiFacebook />
+                  <input type="text" />
+                </div>
+              </div>
+            </div>
+            <div className="double">
+              <div className="input">
+                <label htmlFor="">Twitter </label>
+                <div>
+                <BsTwitterX />
+                  <input type="text" placeholder="" />
+                </div>
+              </div>
+              <div className="input">
+                <label htmlFor="">Linkedin</label>
+                <div>
+                <FaLinkedinIn />
+                  <input type="text" />
+                </div>
+              </div>
+            </div>
+            <div className="input">
+              <label htmlFor="">About</label>
+              <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
             
-            <input type="text" name="login_details" placeholder="Enter First Name"/>
+            <button>SAVE CHANGES</button>
+          </form>
+          
+        </div>
+      )}
+
+      {activeTab === "password" && (
+        <div className="password_div">
+          <h4>Change Password</h4>
+          <form action="" className="triple">
+            <div>
+            <div className="input">
+                <label htmlFor="">E-Mail Address*</label>
+                <div>
+                <IoLockClosedOutline />
+                  <input type="text" placeholder="Email Address" />
+                </div>
+              </div>
+              <div className="input">
+                <label htmlFor="">New Password* </label>
+                <div>
+                <IoLockClosedOutline />
+                  <input type="text" placeholder="New Password" />
+                </div>
+              </div>
+              <div className="input">
+                <label htmlFor="">Confirm New Password* </label>
+                <div>
+                <IoLockClosedOutline />
+                  <input type="text" placeholder="Confirm Password" />
+                </div>
+              </div>
+            </div>
+          
+              <button>CHANGE PASSWORD</button>
+          </form>
+
+          <div className="forgot">
+          <h4>Forgot Password then Recover Password</h4>
+          <p>Enter the email of your account to reset password. Then you will receive a link to email <br />To reset the password.If you have any issue about reset password</p>
+
+          <form action="">
+            <div className="input">
+                <label htmlFor="">E-Mail Address*</label>
+                <div>
+                <IoLockClosedOutline />
+                  <input type="text" placeholder="Email Address" />
+                </div>
+              </div>
+
+              <button>RECOVER PASSWORD</button>
+          </form>
+          
           </div>
         </div>
-        <div className="input_log">
-          <label htmlFor="lastname">Last Name</label>
-          <div>
-            
-            <input type="text" name="login_details" placeholder="Enter Last name" />
-          </div>
-        </div>
-        <div className="input_log">
-          <label htmlFor="phone">Phone Number</label>
-          <div>
-            
-            <input type="text" name="login_details" placeholder="Enter Phone Number" />
-          </div>
-        </div>
-
-        <button>Update Profile</button>
-
-
-        </form>
-        <form action="submit">
-            <h2>Change Password</h2>
-
-            <div className="input_log">
-          <label htmlFor="newwpass">New Password</label>
-          <div>
-            
-            <input type="text" name="login_details" placeholder="Enter New Password"/>
-          </div>
-        </div>
-        <div className="input_log">
-          <label htmlFor="confirmnew">Confirm New Password</label>
-          <div>
-            
-            <input type="text" name="login_details" placeholder="Re-Enter Password" />
-          </div>
-        </div>
-       
-
-        <button>Update Password</button>
-
-
-        </form>
-    </div>
+      )}
     </div>
   );
 };

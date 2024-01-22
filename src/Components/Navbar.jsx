@@ -87,7 +87,10 @@ const Navbar = () => {
   return (
     <div className={fix ? "navbar fixed" : "navbar"}>
       <div className="nav_body">
-        <img className="logo" src={logo} alt="" />
+        
+        <Link to="/"><img className="logo" src={logo} alt="" />
+        </Link>
+        
         <div className="log">
           <div className="cate">
             <p onClick={toggleCategoriesDropdown}>
