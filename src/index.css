@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Syne:wght@400;500;600;700;800&display=swap');
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --mont: 'Montserrat', sans-serif;
@@ -58,4 +60,9 @@ html{
   }
  
   
+}
+@layer components {
+  .bg-primary{
+    background-color: #192F59;
+  }
 }
