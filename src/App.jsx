@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
 import Navbar from "./Components/Navbar";
 import Dashboard from "./pages/Dashboard";
 import MyProfile from "./pages/MyProfile";
 import LoginUser from "./pages/LoginUser";
 import { ProtectedRoute } from "./Components/ProtectedRoute";
+import ScrollToTop from "./Components/ScrollToTop";
 
 function App() {
   return (
