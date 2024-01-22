@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 export const ProtectedRoute = () => {
     const auth = localStorage.getItem('guard_token')
     if (!auth) {
-      window.location.replace('https://guardmaster-web.netlify.app/login');
+      window.location.replace('https://guardmaster.netlify.app/login');
     }
     return (
       <>

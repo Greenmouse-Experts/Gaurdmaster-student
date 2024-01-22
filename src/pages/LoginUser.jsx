@@ -27,7 +27,7 @@ const LoginUser = () => {
             id: data.user.id,
           };
           saveUser(payload);
-          localStorage.setItem("rhs_token", data.token);
+          localStorage.setItem("guard_token", id);
       setTimeout(() => {
         navigate("/");
       }, 500);
@@ -84,8 +84,7 @@ const LoginUser = () => {
                       </p>
                       <div className="mt-6 flex justify-center">
                         <a
-                          href="https://guardmaster-web.netlify.app/login"
-                          target="_blank"
+                          href="https://guardmaster.netlify.app/login"
                           rel="noopener noreferrer"
                           className="px-6 py-3 rounded-lg bg-primary text-white font-medium"
                         >
