@@ -84,7 +84,7 @@ const Navbar = () => {
     <div className={fix ? "navbar fixed" : "navbar"}>
       <div className="nav_body">
         
-        <Link to="/"><img className="logo" src={logo} alt="" />
+        <Link to="/"><img className="logo" src={'https://res.cloudinary.com/greenmouse-tech/image/upload/v1706009737/GuardMaster/Guardmaster_transparent1_1_1_wzdsac.png'} alt="" />
         </Link>
         
         <div className="log">
