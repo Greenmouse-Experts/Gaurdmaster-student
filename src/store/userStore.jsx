@@ -2,14 +2,14 @@ import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 
 const userInitState = {
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     token: '',
     image: '',
-    state: '',
-    account: '',
     phone: '',
-    id: ''
+    id: '',
+    joined: ''
 }
 const useAuthStore = create()(
   persist(

@@ -1,15 +1,13 @@
 .notify{
-    display: flex;
-    justify-content: center;
-  
-    
-    
-    align-self: center;
+    margin: 4rem 3rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+   
   }
-  .not{background: var(--back);  border-radius: 7px;
+  .not{  
     width: 100%;
     padding: 1.5rem;
-    color: white;
+    color: black;
   }
   .notify_body{
     padding-top: 1rem;
@@ -20,16 +18,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid var(--color);
+    border-bottom: 1px solid #dfe0e0;
     padding-bottom: 1.5rem;
-    color: white;
   }
   
   .notify_left{
     gap: 1rem;
     display: flex;
-    color: white;
     align-items: center;
+    color: black;
     width: fit-content;
     white-space: nowrap;
 
@@ -41,42 +38,13 @@
     font-weight: 600 !important;
     border: none;
     background: none;
-    color: white;
+    color: black;
     height: 3rem;
   }
   
-  .view_dot{
-    position: relative;
-    text-align: center;
-  }
   
-  .drop{
-    top: 0;
-    z-index: 555;
-    left:-20px;
-    position: absolute;
-    background: white;
-  }
-  
-  .drop a{
-    width:7rem;
-    padding: 0.5rem  ;
-    font-size: 0.8rem;
-    color: black;
-    border: rgb(149, 149, 149) 1px solid;
-    border-radius: 7px;
-    background: white;
-    box-shadow: 0px 12px 30px 0px rgba(80, 143, 244, 0.1);
-  
-  }
-  
-  .mem{
-    background: black;
-  }
   .unread-notification > span{
-    background: var(--color);
     padding: 1rem;
-    color: white;
     font-size: 2rem !important;
   }
   
@@ -93,9 +61,7 @@
   }
   
   .all-notification span{
-    background: var(--red);
     padding: 1rem;
-    color: white;
     font-size: 2rem !important;
   }
   .all-notification> div{
@@ -141,7 +107,7 @@
   
   
   .notify_left button.active{
-    border-bottom: 3px solid var(--color);
+    border-bottom: 3px solid var(--blu);
   
   }
   
@@ -153,14 +119,12 @@
   
   }
   
-  .notification >span{
+ .mark{
+    border: 0;
+    background: transparent;
     font-size: 1.2rem;
-  }
-  
-  .notification .drop{
-    width: fit-content;
-  }
-  
+    font-weight: 600;
+ }
   
   .notify .load{
     height: fit-content;
@@ -169,137 +133,477 @@
   }
 
 
-  .profile{
+.dash_main{
+    padding-top: 7rem;
+    min-height: 100vh;
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    margin-top: 2rem;
-    color: white;
-    gap: 1.6rem;
+    font-family: var(--mont) !important;
 }
 
-.profile img{
-    width: 10rem;
-    height: 10rem;
-}
-
-.profile_left{
-    background: var(--back);
-    padding: 1.5rem;
-    border-radius: 10px;
-    width: 48%;
-    height: fit-content;
-}
-.profile_head{
+.routes{
+    width: calc(100% - 19rem);
     display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin: 2rem 0;
+   flex-direction: column;
+    flex: 1;
+    min-height: 100vh;
+    margin-left: 19rem;
 }
 
-.profile_head> div{
+.close{
+    display: none;
+    
+
+}
+.sidebar{
+    min-height: 100vh;
+    background: var(--blu);   
+    min-width: 19rem;
+    position: fixed;
+}
+
+.sidebar_link{ padding: 3rem 0;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    padding-right: 1.5rem; 
+      gap: 10px;
 }
 
-.profile_head button{
-    border: 0;
-    background: var(--color);
-    width: fit-content;
-    padding: 0.6rem 1.5rem;
-    font-size: 1rem;
-    
-}
-
-.profile_body{
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-.profile_body svg{
-    font-size: 2rem;
-}
-
-
-.profile_body> div{
-    background: #1b1f22;
+.sidebar_link a{
+    font-size: 1.1rem;
     display: flex;
     flex-direction: row;
-    gap: 1.2rem;
-    padding: 1.5rem 1rem ;
-    align-items: center;
+    align-items: center; 
+    gap: 1rem;
+    text-decoration: none;  
+    color: white; 
+    transition: background-color 0.3s, color 0.3s; 
+    padding: 1rem 2rem;
+    font-weight: 500;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.sidebar_link a:hover{
+    background: #bccce7c7;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
 
 }
 
-.profile_body label{
-    font-size: 0.9rem;
-    
+.nav.active{
+    background: #bccce7c7;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+
 }
 
-.prof_card h3{
-    padding-top: 0.5rem;
+.sidebar_link p:hover{
+ background: #bccce7c7;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+
 }
 
-.profile h2{
+
+
+.sidebar_link p{
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    gap: 1rem;
+    text-decoration: none;  
+    color: white; 
+    transition: background-color 0.3s, color 0.3s; 
+    padding: 1rem 2rem;
+    font-weight: 500;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+.main_profile{
+    padding: 3rem 3rem;
+}
+.profile_heading{
     display: flex;
     justify-content: space-between;
-font-size: 1.8rem;
+    align-items: center;
+    padding: 1rem 6rem 4rem 0 ;
+    border-bottom: 1px solid #e5e7ea;
 }
 
-.profile_left> h2 span{
-    font-size: 1rem;
-    color: var(--color);
+.profile_heading img{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
 }
-
-.profile_right{
-    width: 48%;
+.profile_heading div{
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
-   
+    align-items: center;
+    gap: 1.8rem;
+    font-size: 1.8rem;
+    
 }
 
-.profile_right form{
-    background: var(--back);
-    padding: 2rem 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    border-radius: 10px !important;
+.profile_heading div h3{
+    font-weight: 600 !important;
+}
+
+.profile_heading a{
+    padding: 1rem 2.2rem;
+    font-weight: 500;
+    color: white;
+    background: var(--blu);
+    border-radius: 40px;
+}
+
+.body_profile{
+    padding: 4rem 0;
+}
+.body_profile h3{
+    font-weight: 600 !important;
+    font-size: 1.8rem;
+}
+.body_profile div{
+    padding-top: 3rem ;
+
+}
+
+.body_profile p{
+    border-bottom: 1px solid #f2f3f4;
+    padding: 1.5rem 0;
+    display: grid;
+    grid-template-columns:0.5fr  1fr;
+    font-size: 1.3rem;
+
 }
 
 
-.profile_right .input_log div{
-    background: #1b1f22;
+.body_profile span{
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.profile{
+    margin: 4rem 3rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     border-radius: 10px;
 }
 
-.profile_right .input_log input::placeholder{
-    color: white;
-    font-size: 0.9rem;
-}
-.profile_right .input_log input{
-    color: white !important;
-    font-size: 1rem;
+.profile> h3{
+    padding: 2.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    border-bottom: 1px solid #dfe0e0;
+
 }
 
-.profile_right button{
-    padding: 1rem 3rem;
-    border-radius: 10px;
-    font-size: 1rem;
-    background: var(--color);
-    color: white;
+.profile_btn{
+    padding: 2rem 2.5rem;
+    border-bottom: 1px solid #dfe0e0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+}
+
+.profile_btn button{
+    font-size: 1.2rem;
+    background: transparent;
     border: 0;
+    font-weight: 600;
+    padding-bottom: 1rem;
+    width: fit-content;
+}
+
+.profile_btn .active{
+    padding-bottom: -4px;
+    border-bottom: 4px solid var(--blu);
+}
+.profile_div{
+    padding: 3rem;
+}
+.profile_div h3{
+    font-size: 1.5rem;
     font-weight: 600;
 }
 
+.profile_div> div{
+    display: flex;
+    align-items: center;
+    padding-top: 3rem;
+    gap: 2rem;
+}
 
-.dash_main{
-    padding-top: 10.5rem;
-    color: #1b1f22 !important;
-    background: black;
-    height: 10rem;
+.profile_div img{
+    width: 14rem;
+    height: 14rem;
+}
+
+.profile_div div div{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile_div button{
+    padding: 0.6rem 0.8rem;
+    font-size: 1.1rem;
+}
+
+.profile_form{
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+.double{
     width: 100%;
     display: flex;
     justify-content: space-between;
+    gap: 2rem;
+}
+
+.input{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+   justify-content: start;
+   align-items: flex-start !important;
+    width: 100%;
+}
+
+.input label{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.input div{
+    display: flex;
+    align-items: center;
+    width: inherit;
+    border: 1px solid #c1c2c5;
+    padding: 0.5rem 1.2rem;
+    font-size: 1.5rem;
+    border-radius: 7px;
+   
+}
+
+.input input{
+    border: 0;
+    padding: 0.5rem;
+    width: 100%;
+    font-size: 1.3rem;
+    
+}
+
+.input textarea{
+    border: 1px solid #c1c2c5;
+    padding: 0.5rem 1.2rem;
+    font-size: 1.3rem;
+    height: 10rem;
+    width: 100%;
+    resize: none;
+    border-radius: 7px;
+}
+
+.profile_form button{
+    padding: 1.2rem 2.7rem;
+    border: 0;
+    border-radius: 40px;
+    font-size: 1.2rem;
+    background: var(--blu);
+    color: white;
+    font-weight: 600;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.password_div{
+    padding: 3rem;
+}
+.password_div h4{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.triple{
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border-bottom: 1px solid #dfe0e0;
+    padding-bottom: 4rem;
+
+}
+.triple> div{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+.triple button{
+    padding: 1.2rem 2.7rem;
+    border: 0;
+    border-radius: 40px;
+    font-size: 1.2rem;
+    background: var(--blu);
+    color: white;
+    font-weight: 600;
+    width: fit-content;cursor: pointer;
+}
+.profile_form button:hover{
+    background: #5790f4ee;
+    border: 1px solid var(--blu);
+    
+}
+.triple button:hover{
+    background: #5790f4ee;
+    border: 1px solid var(--blu);
+    
+}
+
+.forgot button:hover{
+    background: #5790f4ee;
+    border: 1px solid var(--blu);
+    
+}
+
+.forgot{
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.forgot .input{
+    width: 70%;
+    margin: 1rem 0;
+}
+
+.forgot button{
+    margin-top: 1rem;
+    padding: 1.2rem 2.7rem;
+    border: 0;
+    border-radius: 40px;
+    font-size: 1.2rem;
+    background: var(--blu);
+    color: white;
+    font-weight: 600;
+    width: fit-content;cursor: pointer;
+}
+
+.message{
+    margin: 4rem 3rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 10px;
+}
+
+
+.message> h3{
+    padding: 2.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    border-bottom: 1px solid #dfe0e0;
+
+}
+
+.message_{
+    padding: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.3rem;
+}
+
+.menu_svg{
+    margin: 2.5rem 3rem;
+    font-size: 1.8rem;
+    display: none;
+}
+
+@media screen and (max-width:1024px) {
+    .close{
+        margin-top: 1.7rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-right: 1.7rem;
+    font-size: 1.8rem;
+    color: white;
+    }
+    .menu_svg{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.8rem 2rem;
+        border-radius: 8px;
+        background: var(--blu);
+        color: white;
+        width: fit-content;
+    }   
+    .message,.profile,.main_profile,.notify{
+        margin-top: 0 !important;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+        transition: ease-in-out 300ms;
+      }
+  
+      .sidebar-open .sidebar {
+          transform: translateX(0);
+          transition: ease-in-out 300ms;
+        }
+
+    .routes{
+        margin-left: 0;
+    }
+    .sidebar_link{ padding: 1rem 0;
+        padding-right: 1.5rem;
+    
+    }
+}
+
+@media screen and (max-width:745px) {
+    .profile_heading{
+        flex-direction: column;
+        align-items: start;
+        gap:2rem;
+    }
+
+    .body_profile div p{
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem
+        ;
+        font-size: 1rem;
+    }
+
+    .body_profile span{
+        font-size: 1rem;
+    }
+
+    .double{
+        flex-direction: column;
+
+    }
+
+    .profile_div > div{
+        flex-direction: column;
+    }
+
+    .profile_div img{
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .triple> div {
+        flex-direction: column;
+    }
+
+    .forgot .input{
+        width: 100%;
+    }
 }

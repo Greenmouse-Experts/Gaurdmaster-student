@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-import "../stylesheet/pages.css";
+import "../Stylesheet/dashboard.css"
 import { BsTrash3Fill } from "react-icons/bs";
-import {GoBell} from "react-icons/go"
+import { GoBell } from "react-icons/go";
 
 const Notify = ({ datas }) => {
- 
-
   const [activeButton, setActiveButton] = useState("all");
   //  const { data, isLoading } = useGetHook("member/get/all/notifications");
-
 
   //  const { handlePost } = usePostHook();
   //  const onSuccess = () => {
@@ -19,9 +16,6 @@ const Notify = ({ datas }) => {
   //    handlePost(endpoint, `Application/json`, onSuccess)
   //  };
 
-      
-   
-
   // const [notifications, setNotifications] = useState([]);
 
   // useEffect(() => {
@@ -30,8 +24,8 @@ const Notify = ({ datas }) => {
   //   }
   // }, [data]);
 
-  const notifications =[]
-  
+  const notifications = [];
+
   const handleButtonClick = (buttonType) => {
     setActiveButton(buttonType);
   };
@@ -57,40 +51,40 @@ const Notify = ({ datas }) => {
           <button className="mark">Mark all as read</button>
         </div>
 
-            {notifications.length > 0 ? (
-          <div className="notify_body"> {
-              
-              notifications.map((item, index) => (
-               <div
-              
-               key={item.id}
-               className={`notification ${
-                 (activeButton === "unread" && item.status === "Unread") ||
-                 (activeButton === "all" && item.status === "Unread")
-                   ? "unread-notification"
-                   : "all-notification"
-               }`}
-             >
-              <span><GoBell /></span>
-                <div>                  
-                  <div >
+        {notifications.length > 0 ? (
+          <div className="notify_body">
+            {" "}
+            {notifications.map((item, index) => (
+              <div
+                key={item.id}
+                className={`notification ${
+                  (activeButton === "unread" && item.status === "Unread") ||
+                  (activeButton === "all" && item.status === "Unread")
+                    ? "unread-notification"
+                    : "all-notification"
+                }`}
+              >
+                <span>
+                  <GoBell />
+                </span>
+                <div>
+                  <div>
                     <h3>
-                    {item.body} <span>{item.title}</span>
-                  </h3>
-                  <p>{item.created_at} ago</p>
-                  </div><BsTrash3Fill />
+                      {item.body} <span>{item.title}</span>
+                    </h3>
+                    <p>{item.created_at} ago</p>
+                  </div>
+                  <BsTrash3Fill />
                 </div>
-               
               </div>
-            ))} </div>): (
-              <div className="notify_body">
-              <p>No Notification</p>
-              </div>
-            )}
-           
+            ))}{" "}
           </div>
-        
-     
+        ) : (
+          <div className="notify_body">
+            <p>No Notification</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

@@ -11,8 +11,11 @@ import { FiHeart, FiUser } from "react-icons/fi";
 import prof from "../assets/profile.png";
 import { GrPower } from "react-icons/gr";
 import { PiBooksDuotone } from "react-icons/pi";
+import useAuthStore from "../store/userStore";
+import ProfileAvatar from "./UI/ProfileAvatar";
 
 const Navbar = () => {
+  const user = useAuthStore((state) => state.user);
   const [showCategoriesDropdown, setShowCategoriesDropdown] = useState(false);
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
 
@@ -54,13 +57,6 @@ const Navbar = () => {
 
   window.addEventListener("scroll", setFixed);
 
-  // const scrollToTop = () => {
-  //   window.scrollTo({
-  //     top: 0,
-  //     behavior: "smooth",
-  //   });
-  // };
-
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -87,7 +83,10 @@ const Navbar = () => {
   return (
     <div className={fix ? "navbar fixed" : "navbar"}>
       <div className="nav_body">
-        <img className="logo" src={logo} alt="" />
+        
+        <Link to="/"><img className="logo" src={logo} alt="" />
+        </Link>
+        
         <div className="log">
           <div className="cate">
             <p onClick={toggleCategoriesDropdown}>
@@ -103,10 +102,10 @@ const Navbar = () => {
               )}
             </p>
 
-            <div className="search">
+            {/* <div className="search">
               <input type="text" placeholder="Search for anything" />
               <FiSearch />
-            </div>
+            </div> */}
 
             <Link>My Courses</Link>
           </div>
@@ -120,11 +119,8 @@ const Navbar = () => {
               Home
             </NavLink>
             
-            <p ref={dropdownRef} onClick={toggleCategoriesDropdown}>
-              {" "}
-              
+            <p className="flex items-center gap-x-3" ref={dropdownRef} onClick={toggleCategoriesDropdown}>
               CATEGORIES <IoIosArrowDown />
-              
             </p>
             {showCategoriesDropdown && (
                 <div className="cat">
@@ -174,12 +170,12 @@ const Navbar = () => {
           <div className="prof_logo">
           <img src={prof} alt="" />
           </div>
-          <p ref={dropdownRef} className="profile_logo" onClick={toggleProfileDropdown}>
-            <img src={prof} alt="" /> <span>Hello</span>
+          <div ref={dropdownRef} className="profile_logo" onClick={toggleProfileDropdown}>
+            <ProfileAvatar name={`${user.firstName} ${user.lastName}`} font={18} size={55}/> <span>{user.firstName}</span>
             {showProfileDropdown && (
-              <div className="profile_drop">
-                <div className="prof_head">
-                <img src={prof} alt="" /> <span>STUDENT</span>
+              <div className="profile_drop shadow-lg">
+                <div className="bg-primary flex gap-x-2 p-4 items-center rounded-t-xl text-white">
+                   <div className="pl-3">{user.firstName} {user.lastName}</div>
                 </div>
                 <div className="prof_link">
                   <NavLink to="/student"><FiUser /> My Profile</NavLink>
@@ -191,7 +187,7 @@ const Navbar = () => {
                 <p><GrPower /> Logout</p>
               </div>
             )}
-          </p>
+          </div>
         </div>
       </div>
 

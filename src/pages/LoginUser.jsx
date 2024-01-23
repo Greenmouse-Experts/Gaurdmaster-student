@@ -4,10 +4,12 @@ import { BeatLoader } from "react-spinners";
 import logo from "../assets/logo.png";
 import { getUser } from "../services/api/authApi";
 import { useQuery } from "@tanstack/react-query";
+import useAuthStore from "../store/userStore";
 
 const LoginUser = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const saveUser = useAuthStore((state) => state.saveUser);
   const { isLoading, isError, data, isSuccess } = useQuery({
     queryKey: ["getUser"],
     queryFn: () => getUser(id || ""),
@@ -16,18 +18,17 @@ const LoginUser = () => {
   });
   useEffect(() => {
     if (isSuccess) {
-        const payload = {
-            token: data.token,
-            name: data.user.name,
-            email: data.user.email,
-            phone: data.user.phone,
-            image: data.user.photo,
-            state: data.user.state,
-            account: data.user.userType,
-            id: data.user.id,
-          };
-          saveUser(payload);
-          localStorage.setItem("guard_token", id);
+      const payload = {
+        token: id,
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        phone: data.phone,
+        id: data.id,
+        joined: data.createdDate
+      };
+      saveUser(payload);
+      localStorage.setItem("guard_token", id);
       setTimeout(() => {
         navigate("/");
       }, 500);
