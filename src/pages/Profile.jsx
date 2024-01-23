@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import profile from "../assets/user.png";
-import "../stylesheet/dashboard.css";
+import "../Stylesheet/dashboard.css"
 import { BiLogoGmail } from "react-icons/bi";
 import { BsTwitterX, BsTelephoneFill } from "react-icons/bs";
 import { FiUser, FiFacebook } from "react-icons/fi";
