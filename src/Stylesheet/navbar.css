@@ -19,6 +19,7 @@
   padding: 1rem 5%;
   align-items: center;
   position: relative;
+  height: 115px;
 }
 
 .nav_link {
@@ -91,7 +92,6 @@
 }
 
 .logo {
-  height: 5rem;
   width: 20rem;
 }
 
@@ -603,6 +603,5 @@ footer {
 
   .logo {
     width: 15rem;
-    height: 4rem;
   }
 }

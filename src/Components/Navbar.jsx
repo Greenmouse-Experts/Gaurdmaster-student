@@ -2,9 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "../Stylesheet/navbar.css";
 import { Link, NavLink } from "react-router-dom";
 import { RiMenuFill, RiCloseFill } from "react-icons/ri";
-import logo from "../assets/logo.png";
 import { IoIosArrowDown } from "react-icons/io";
-import { FiSearch } from "react-icons/fi";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { GoBell } from "react-icons/go";
 import { FiHeart, FiUser } from "react-icons/fi";
@@ -171,7 +169,9 @@ const Navbar = () => {
           <img src={prof} alt="" />
           </div>
           <div ref={dropdownRef} className="profile_logo" onClick={toggleProfileDropdown}>
-            <ProfileAvatar name={`${user.firstName} ${user.lastName}`} font={18} size={55}/> <span>{user.firstName}</span>
+            {user.image ? (
+                <img src={user.image} alt="profile" className="!w-[65px]"/>
+              ) : <ProfileAvatar name={`${user.firstName} ${user.lastName}`} font={18} size={55}/>} <span>{user.firstName}</span>
             {showProfileDropdown && (
               <div className="profile_drop shadow-lg">
                 <div className="bg-primary flex gap-x-2 p-4 items-center rounded-t-xl text-white">

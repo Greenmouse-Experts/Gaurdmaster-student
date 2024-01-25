@@ -42,7 +42,7 @@ a{
   text-decoration: none;
   box-sizing: border-box;
   scroll-behavior: smooth;
-
+  font-family: 'Montserrat', sans-serif;
 }
 
 html{
@@ -60,6 +60,9 @@ html{
   }
  
   
+}
+.Toastify__toast-container {
+  z-index: 30000 !important;
 }
 @layer components {
   /* container settings */
@@ -177,13 +180,13 @@ html{
     background: #e3f9ff;
   }
   .bg-tertial {
-    background: #111827;
+    background: #003da5;
   }
   .border-ter {
-    border: 1px solid #111827;
+    border: 1px solid #003da5;
   }
   .border-tertial {
-    border-bottom: 6px solid #111827 !important;
+    border-bottom: 6px solid #003da5 !important;
     transition: 0.5s;
   }
   .bg-tertial-op {
@@ -211,7 +214,7 @@ html{
     );
   }
   .text-primary {
-    color: #111827;
+    color: #003da5;
   }
   .bg-primary{
     background-color: #003da5;
@@ -241,14 +244,14 @@ html{
     background-size: 100% 100%;
   }
   .btn-primary {
-    background: #111827;
+    background: #003da5;
     color: white;
     font-weight: 500;
-    border-radius: 4px;
+    border-radius: 30px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   }
   .btn-disabled {
-    background: #11182795;
+    background: #003da595;
     color: white;
     font-weight: 500;
     border-radius: 4px;
@@ -256,7 +259,7 @@ html{
   }
   .btn-primary:hover,
   .btn-like:hover {
-    background: #181f2cbe;
+    background: #003185;
     transform: scaleX(1.02);
     transition: 0.6s;
   }
@@ -273,7 +276,7 @@ html{
     cursor: pointer;
   }
   .btn-like {
-    background: #111827;
+    background: #003da5;
     color: white;
     font-weight: 500;
     padding: 10px 30px;
