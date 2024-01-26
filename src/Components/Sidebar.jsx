@@ -17,7 +17,7 @@ const Sidebar = ({close}) => {
             <NavLink onClick={close} to="/student" className="nav" exact ><FiUser /> My Profile</NavLink>
             <NavLink  onClick={close} to="message" className="nav"><GoBell /> Message</NavLink>
             <NavLink onClick={close} to="notify" className="nav"><MdAccessTime /> Notification</NavLink>
-            <NavLink onClick={close} to="purchase" className="nav"><MdOutlineShoppingCart /> Purchase History</NavLink>
+            <NavLink onClick={close} to="/history" className="nav"><MdOutlineShoppingCart /> Purchase History</NavLink>
             <p><GrPower />  Logout</p>
         </div>
     </div>

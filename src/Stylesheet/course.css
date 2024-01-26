@@ -1,0 +1,290 @@
+.course{
+    padding-top: 5.8rem;
+}
+
+.header {
+    height: 33vh;
+    overflow: hidden;
+    font-family: var(--sky)!important;
+
+}
+
+.header_cont {
+    padding-top: 3rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.header_img {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+
+}
+
+.header_img img {
+    background: rgba(0, 0, 0, 0.5);
+    background-position: center;
+    background-size: cover;
+    image-resolution: from-image;
+    height: 100% !important;
+    width: 100%;
+    image-resolution: 300dpi;
+    image-resolution: from-image 300dpi;
+    image-resolution: 300dpi snap;
+}
+
+.header_text {
+    position: relative;
+    padding: 3rem 7% 1.5rem 7%;
+    display: flex;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.header_text h2 {
+    color: #FFF;
+
+    font-size: 2.8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+
+.head_link{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+.head_link a{
+    font-size: 1.2rem;
+    font-family: var(--mont) !important;
+    color: white;
+    padding-bottom: 8px;
+}
+
+.head_link a.active{
+    border-bottom: 5px solid var(--yell);
+}
+
+.grid_course{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 3rem 7%;
+    font-family: var(--mont) !important;
+    width: 100%;
+}
+
+
+
+.grid_course .slide_card{
+    width: 100%;
+    margin: 0 !important;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+}
+
+.enrol {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.enrol a:nth-child(1){
+    background: white;
+    color: black;
+    font-weight: 600;
+    border: 2px solid var(--blu);
+}
+
+.enrol a:nth-child(1):hover{
+    background: var(--blu);
+    color: white;
+
+}
+.enrol a:nth-child(2){
+    font-weight: 600;
+}
+.enrol a:nth-child(2):hover{
+    background: white;
+    color: black;
+    border: 2px solid var(--blu);
+}
+
+
+.pagination{
+    padding: 3rem 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagee{
+    padding: 1rem 2.5rem;
+    border-radius: 40px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 4px 10px 0px;
+    display: flex;
+    align-items: center;
+    gap: 1.7rem
+    ;
+}
+
+.pagee button {
+    background: white;
+    border: 0;
+    padding: 13px;
+    border-radius: 50%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 4px 10px 0px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    color: var(--blu);
+}
+
+.pagee button:hover {
+    background: var(--blu) ;
+    color: white;
+}
+
+.pagee span{
+    background: white;
+    border: 0;
+    padding: 13px 22px;
+    border-radius: 50%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 4px 10px 0px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    color: var(--blu);
+    font-weight: 600;
+    font-family: var(--mont) !important;
+}
+.pagee span.active{
+    background: var(--blu) ;
+    color: white;
+}
+.pagee span:hover{
+    background: var(--blu) ;
+    color: white;
+}
+
+
+.history{
+    padding: 10% 7%;
+}
+.card_table{
+    width: 100% !important;
+    overflow-x: auto;
+    border: black 1px solid;
+     margin-top: 2rem;
+     font-family: var(--mont) !important;
+}
+.card_table table{
+   margin-top: 0;
+    overflow-x: auto;
+   background: var(--blu);
+    color: white;
+    /* margin-top: 2rem; */
+    width: 100%;
+    border: none;
+    border-bottom: none;
+    overflow-x: auto;
+}
+
+.card_table th:not(:last-child){
+    border-right:  black 1px solid ;
+    text-align: left;
+    padding: 1rem;
+
+}
+
+.card_table td:not(:last-child){
+    border-right:  black 1px solid ;
+    
+}
+
+
+.card_table td{
+    margin-top: 5rem;
+    text-align: left;
+    border-bottom:black 1px solid;
+    padding: 1rem;
+    color: black;
+}
+
+.card_table th{
+    border-bottom:black 1px solid;
+    text-align: left;
+    padding: 1rem;
+    white-space: nowrap;
+    padding-right: 2.5rem  !important;
+}
+
+.card_table tr{
+    border-bottom:black 1px solid;
+    display: table-row; 
+}
+
+.card_table p{
+    width: inherit;
+    padding: 1.3rem;
+
+    border-top: none;
+}
+
+.card_table p a{
+    font-size: 1.1rem;
+    color: var(--blu);
+}
+
+@media screen and (max-width:1400px) {
+    .enrol{
+        flex-direction: column;
+        align-items: flex-start !important;
+        justify-content: start;
+        gap: 1rem;
+    }
+
+}
+
+@media screen and (max-width:900px) {
+   .grid_course{
+    grid-template-columns: repeat(2, 1fr);
+   }
+
+   .header{
+    height: 25vh;
+   }
+}
+
+@media screen and (max-width:550px) {
+    .grid_course{
+     grid-template-columns: repeat(1, 1fr);
+     width: 100%;
+    }
+    .slide_card{
+       min-width: 100%;
+    }
+    
+    .header{
+        height: 20vh;
+    }
+
+    .pagee{
+        overflow-x: scroll;
+    }
+ }
+ 
+

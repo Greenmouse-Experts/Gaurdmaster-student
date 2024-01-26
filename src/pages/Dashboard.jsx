@@ -35,6 +35,8 @@ const Dashboard = () => {
                     <Route path='profile' element={<Profile/>}/>
                     <Route path='message' element={<Message/>}/>
                     <Route path='notify' element={<Notify/>}/>
+                    
+                    
                 </Routes>
             </div>
         </div>

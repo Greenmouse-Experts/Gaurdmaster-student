@@ -111,7 +111,7 @@ const Navbar = () => {
               <FiSearch />
             </div>
 
-            <Link>My Courses</Link>
+            <NavLink to="/course">My Courses</NavLink>
           </div>
 
           <div
@@ -123,7 +123,7 @@ const Navbar = () => {
               Home
             </NavLink>
             
-            <p ref={dropdownRef} onClick={toggleCategoriesDropdown}>
+            <p onClick={toggleCategoriesDropdown}>
               {" "}
               
               CATEGORIES <IoIosArrowDown />
@@ -137,16 +137,16 @@ const Navbar = () => {
                   <Link>PC Programs</Link>
                 </div>
               )}
-            <NavLink onClick={toggle} onBlur={hide} onFocus={show} to="">
+            <NavLink onClick={toggle} onBlur={hide} onFocus={show} to="/course">
             My Courses
             </NavLink>
             <NavLink onClick={toggle} onBlur={hide} onFocus={show} to="/student">
               Dashboard
             </NavLink>
-            <NavLink className="hid" onClick={toggle} onBlur={hide} onFocus={show} to="contact">
+            <NavLink className="hid" onClick={toggle} onBlur={hide} onFocus={show} to="/cart">
              My Cart
             </NavLink>
-            <NavLink className="hid" onClick={toggle} onBlur={hide} onFocus={show} to="contact">
+            <NavLink className="hid" onClick={toggle} onBlur={hide} onFocus={show} to="student/notify">
               Notification
             </NavLink>
             <p
@@ -160,15 +160,15 @@ const Navbar = () => {
           </div>
         </div>
         <div className="icon">
-          <p className="icon_span">
+          <Link to="/cart" className="icon_span">
             <MdOutlineShoppingCart /> <span>0</span>
-          </p>
-          <p className="icon_span">
+          </Link>
+          <Link to="student/notify" className="icon_span">
             <GoBell /> <span>0</span>
-          </p>
-          <p className="icon_span">
+          </Link>
+          <Link to="wishlist" className="icon_span">
             <FiHeart /> <span>0</span>
-          </p>
+          </Link>
 
           <button className="nav_toggle" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <RiCloseFill /> : <RiMenuFill />}
@@ -186,9 +186,9 @@ const Navbar = () => {
                 </div>
                 <div className="prof_link">
                   <NavLink to="/student"><FiUser /> My Profile</NavLink>
-                  <Link><PiBooksDuotone /> My Courses</Link>
-                  <Link><GoBell />  Message</Link>
-                  <Link> <MdOutlineShoppingCart /> Purchase History</Link>
+                  <Link to="course"><PiBooksDuotone /> My Courses</Link>
+                  <Link to="student/message"><GoBell />  Message</Link>
+                  <Link to="history"> <MdOutlineShoppingCart /> Purchase History</Link>
                   
                 </div>
                 <p><GrPower /> Logout</p>

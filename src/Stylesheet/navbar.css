@@ -150,6 +150,7 @@
 
 .prof_link a:hover{
     background: var(--blu);
+    color: white;
 }
 
 .profile_drop p{

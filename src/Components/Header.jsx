@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";  
-import "../Stylesheet/about.css";
+import {  NavLink } from "react-router-dom";  
+import "../Stylesheet/course.css";
 
-export const Header = ({ image, title, body }) => {
+const Header = ({ image, title }) => {
   return (
     <div className="main_header">
     
@@ -18,7 +18,10 @@ export const Header = ({ image, title, body }) => {
             className="header_text"
           >
             <h2>{title}</h2>
-            <p><Link to="/">Home</Link> / {body}</p>
+            <div className="head_link">
+              <NavLink to="/course">All Courses</NavLink> <NavLink to="/wishlist">Wishlist</NavLink>
+            </div>
+            
          
           </div>
         </div>
@@ -26,3 +29,6 @@ export const Header = ({ image, title, body }) => {
     </div>
   );
 };
+
+
+export default Header
